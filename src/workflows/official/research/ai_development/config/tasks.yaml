@@ -1,0 +1,38 @@
+# Task Definitions for Latest AI Development Crew
+research_task:
+  description: >
+    Conduct thorough research about Cybersecurity. Focus on:
+    1. Latest developments (make sure to find information from {current_year})
+    2. Key players and their contributions
+    3. Technical innovations and breakthroughs
+    4. Challenges and limitations
+    5. Future directions and emerging trends
+    
+    Use web search tools to find the most current and relevant information.
+    Make sure to identify credible sources and cite them appropriately.
+  expected_output: >
+    A list with 10 bullet points covering the most significant findings about {topic},
+    with emphasis on technical details relevant to developers and researchers.
+    Include source citations for each major finding.
+  agent: researcher
+
+reporting_task:
+  description: >
+    Review the research findings and create a comprehensive report on {topic}.
+    Expand each bullet point with supporting evidence, technical explanations,
+    and implementation considerations. Structure the report with clear sections:
+    
+    1. Executive Summary
+    2. Key Developments
+    3. Technical Innovations
+    4. Market Impact
+    5. Future Outlook
+    6. Recommendations
+    
+    Make the report accessible to both technical and non-technical audiences.
+  expected_output: >
+    A fully fledged technical report with sections covering each major aspect of {topic}.
+    Include code examples where relevant. Format as markdown without code block indicators.
+    The report should be between 2000-3000 words and professionally structured.
+  agent: reporting_analyst
+  output_file: report.md 

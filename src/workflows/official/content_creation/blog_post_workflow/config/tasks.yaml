@@ -1,0 +1,133 @@
+# Blog Post Generation Tasks Configuration
+
+research_task:
+  description: >
+    Conduct comprehensive research on "{topic}" focusing on:
+    
+    1. **Current Trends & Developments**: Find the latest information from {current_year}
+    2. **Key Statistics & Data**: Gather relevant metrics and research findings
+    3. **Expert Opinions**: Identify thought leaders and their perspectives
+    4. **Case Studies**: Find real-world examples and success stories
+    5. **Challenges & Solutions**: Understand common problems and their solutions
+    6. **Future Outlook**: Research predictions and emerging trends
+    
+    Target audience: {target_audience}
+    
+    Use web search tools to find credible sources including:
+    - Industry publications and journals
+    - Expert blogs and thought leadership content
+    - Research reports and whitepapers
+    - News articles and press releases
+    - Academic studies and surveys
+    
+    Ensure all information is current, accurate, and relevant to the target audience.
+  expected_output: >
+    A comprehensive research document containing:
+    - Executive summary of key findings
+    - 10-15 main research points with source citations
+    - Relevant statistics and data points
+    - Expert quotes and insights
+    - Case studies and examples
+    - Trending subtopics and related keywords
+    - Source credibility assessment
+    
+    Format as structured markdown with clear sections and proper citations.
+  agent: research_agent
+
+seo_optimization_task:
+  description: >
+    Based on the research findings, create an SEO-optimized content strategy for "{topic}":
+    
+    1. **Keyword Analysis**: 
+       - Primary keywords: {keywords}
+       - Identify 5-10 related long-tail keywords
+       - Analyze search intent and competition
+    
+    2. **Content Structure**:
+       - Create SEO-friendly headline options (H1)
+       - Design subheading structure (H2, H3)
+       - Plan internal linking opportunities
+    
+    3. **Meta Elements**:
+       - Write compelling meta title (50-60 characters)
+       - Create meta description (150-160 characters)
+       - Suggest alt text for images
+    
+    4. **Content Optimization**:
+       - Keyword density recommendations
+       - Semantic keyword suggestions
+       - Content length optimization for {word_count} words
+    
+    5. **User Experience**:
+       - Readability score targets
+       - Content formatting recommendations
+       - Call-to-action placement
+    
+    Target audience: {target_audience}
+  expected_output: >
+    A detailed SEO strategy document including:
+    - Primary and secondary keyword list with search volumes
+    - Optimized headline and subheading structure
+    - Meta title and description
+    - Content outline with keyword placement
+    - Internal linking strategy
+    - Image and media recommendations
+    - Readability and formatting guidelines
+    - Success metrics and KPIs
+    
+    Format as actionable markdown with clear implementation steps.
+  agent: seo_specialist
+
+content_writing_task:
+  description: >
+    Using the research findings and SEO strategy, write a comprehensive blog post about "{topic}":
+    
+    **Content Requirements**:
+    - Word count: {word_count} words
+    - Tone: {tone}
+    - Target audience: {target_audience}
+    - Include primary keywords: {keywords}
+    
+    **Structure Requirements**:
+    1. **Compelling Introduction** (150-200 words)
+       - Hook the reader with an interesting fact or question
+       - Clearly state what the article will cover
+       - Include primary keyword naturally
+    
+    2. **Main Content Sections** (based on SEO strategy)
+       - Use research findings to create valuable content
+       - Include statistics, examples, and expert insights
+       - Maintain consistent tone throughout
+       - Integrate keywords naturally
+    
+    3. **Practical Elements**:
+       - Include actionable tips or steps
+       - Add relevant examples or case studies
+       - Use bullet points and numbered lists for readability
+    
+    4. **Strong Conclusion** (100-150 words)
+       - Summarize key points
+       - Include clear call-to-action
+       - Encourage engagement (comments, shares, etc.)
+    
+    **Formatting Requirements**:
+    - Use proper markdown formatting
+    - Include H2 and H3 subheadings
+    - Add emphasis with bold and italic text
+    - Create scannable content with short paragraphs
+    - Include placeholder for images: [Image: Description]
+  expected_output: >
+    A complete, publication-ready blog post in markdown format containing:
+    - SEO-optimized title and meta description
+    - Well-structured content with proper headings
+    - Engaging introduction and strong conclusion
+    - Valuable, research-backed information
+    - Natural keyword integration
+    - Clear call-to-action
+    - Proper formatting for web publication
+    - Image placeholders with descriptions
+    
+    The content should be ready for immediate publication and optimized 
+    for both search engines and user engagement.
+  agent: content_writer
+  output_file: blog_post.md 

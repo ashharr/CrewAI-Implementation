@@ -1,0 +1,70 @@
+{
+  "summary": {
+    "workflow_id": "demo_workflow_001",
+    "workflow_name": "AI Development Research Workflow",
+    "execution_time": "12.21s",
+    "total_outputs": 3,
+    "success_rate": "100.0%",
+    "total_words": 574,
+    "agent_count": 3,
+    "started_at": "2025-06-03T13:44:00",
+    "completed_at": "2025-06-03T13:44:12.208732",
+    "quality_score": null
+  },
+  "analytics": {
+    "total_outputs": 3,
+    "status_distribution": {
+      "success": 3
+    },
+    "success_rate": 1.0,
+    "agent_count": 3,
+    "agent_performance": {
+      "Research Specialist": {
+        "output_count": 1,
+        "success_rate": 1.0,
+        "avg_word_count": 170,
+        "avg_execution_time": 2.5
+      },
+      "SEO Specialist": {
+        "output_count": 1,
+        "success_rate": 1.0,
+        "avg_word_count": 26,
+        "avg_execution_time": 3.3
+      },
+      "Content Writer": {
+        "output_count": 1,
+        "success_rate": 1.0,
+        "avg_word_count": 378,
+        "avg_execution_time": 4.1
+      }
+    },
+    "content_metrics": {
+      "total_words": 574,
+      "avg_words_per_output": 191.33333333333334,
+      "min_words": 26,
+      "max_words": 378,
+      "median_words": 170
+    },
+    "performance_metrics": {
+      "total_execution_time": 12.208732,
+      "avg_task_time": 3.3,
+      "min_task_time": 2.5,
+      "max_task_time": 4.1,
+      "avg_confidence": 0.89,
+      "min_confidence": 0.89,
+      "max_confidence": 0.89
+    },
+    "quality_metrics": {
+      "outputs_with_validation": 0,
+      "avg_validation_score": null,
+      "outputs_with_errors": 0,
+      "outputs_with_warnings": 0
+    }
+  },
+  "insights": [
+    "\ud83c\udf89 Perfect execution - all outputs completed successfully!",
+    "\u26a1 Fast execution time - efficient workflow",
+    "\ud83c\udf1f Research Specialist achieved perfect performance",
+    "\ud83c\udfa8 Diverse output types: markdown, json"
+  ]
+}
