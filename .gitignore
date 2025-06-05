@@ -110,4 +110,75 @@ report.md
 .vscode/
 .idea/
 *.swp
-*.swo 
+*.swo
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# OS generated files
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+*.sqlite
+*.db
+logs/
+uploads/
+downloads/
+temp/
+tmp/
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# Environment variables
+.env.development
+.env.test
+.env.production
+
+# ChromaDB
+chroma_db/
+chroma_persist/
+
+# Redis dump
+dump.rdb
+
+# Celery
+celery-*.log
+
+# Alembic
+alembic.ini
+
+# Node.js (for any frontend assets)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts
+*.tar.gz
+*.zip 

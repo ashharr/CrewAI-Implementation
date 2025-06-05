@@ -1,0 +1,42 @@
+FROM python:3.11-slim
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH=/app
+
+# Install system dependencies
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        build-essential \
+        curl \
+        git \
+        postgresql-client \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set work directory
+WORKDIR /app
+
+# Install Poetry
+RUN pip install poetry
+
+# Configure Poetry: Don't create virtual environment, install dependencies globally
+RUN poetry config virtualenvs.create false
+
+# Copy poetry files
+COPY pyproject.toml poetry.lock* ./
+
+# Install dependencies
+RUN poetry install --no-dev
+
+# Copy project
+COPY . .
+
+# Create directories for uploads and logs
+RUN mkdir -p /app/uploads /app/logs
+
+# Expose port
+EXPOSE 8000
+
+# Command to run the application
+CMD ["uvicorn", "src.gateway.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"] 

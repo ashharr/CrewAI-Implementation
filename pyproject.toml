@@ -130,22 +130,57 @@ platform-test = "src.core.cli:test_workflow"
 platform-deploy = "src.core.cli:deploy"
 
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.poetry]
+name = "ai-agent-platform"
+version = "0.1.0"
+description = "AI Agent & Workflow Management Platform"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
 
-[tool.setuptools.package-dir]
-"" = "src"
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.104.1"
+uvicorn = {extras = ["standard"], version = "^0.24.0"}
+pydantic = "^2.5.0"
+pydantic-settings = "^2.1.0"
+sqlalchemy = "^2.0.23"
+alembic = "^1.13.0"
+asyncpg = "^0.29.0"
+redis = "^5.0.1"
+celery = "^5.3.4"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+python-multipart = "^0.0.6"
+aiofiles = "^23.2.1"
+httpx = "^0.25.2"
+structlog = "^23.2.0"
+python-dotenv = "^1.0.0"
+cryptography = "^41.0.7"
+chromadb = "^0.4.18"
+langchain = "^0.0.350"
+langchain-openai = "^0.0.2"
+crewai = "^0.22.5"
+slowapi = "^0.1.9"
+prometheus-client = "^0.19.0"
 
-[tool.setuptools.package-data]
-"*" = ["*.yaml", "*.yml", "*.json", "*.md", "*.txt"]
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+pytest-asyncio = "^0.21.1"
+pytest-cov = "^4.1.0"
+black = "^23.11.0"
+flake8 = "^6.1.0"
+mypy = "^1.7.1"
+pre-commit = "^3.6.0"
+factory-boy = "^3.3.0"
+httpx = "^0.25.2"
 
-# Black configuration
 [tool.black]
 line-length = 88
-target-version = ['py310', 'py311', 'py312']
+target-version = ['py311']
 include = '\.pyi?$'
 extend-exclude = '''
 /(
@@ -161,9 +196,8 @@ extend-exclude = '''
 )/
 '''
 
-# MyPy configuration
 [tool.mypy]
-python_version = "3.10"
+python_version = "3.11"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
@@ -177,41 +211,30 @@ warn_no_return = true
 warn_unreachable = true
 strict_equality = true
 
-# Pytest configuration
 [tool.pytest.ini_options]
-minversion = "7.0"
-addopts = "-ra -q --strict-markers --strict-config"
+minversion = "6.0"
+addopts = "-ra -q --strict-markers --cov=src --cov-report=term-missing --cov-report=html"
 testpaths = ["tests"]
 python_files = ["test_*.py", "*_test.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
-markers = [
-    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
-    "integration: marks tests as integration tests",
-    "unit: marks tests as unit tests",
-    "api: marks tests as API tests",
-]
+asyncio_mode = "auto"
 
-# Coverage configuration
 [tool.coverage.run]
 source = ["src"]
 omit = [
     "*/tests/*",
     "*/test_*",
     "*/__pycache__/*",
-    "*/migrations/*",
+    "*/migrations/*"
 ]
 
 [tool.coverage.report]
 exclude_lines = [
     "pragma: no cover",
     "def __repr__",
-    "if self.debug:",
-    "if settings.DEBUG",
     "raise AssertionError",
     "raise NotImplementedError",
-    "if 0:",
     "if __name__ == .__main__.:",
-    "class .*\\bProtocol\\):",
-    "@(abc\\.)?abstractmethod",
+    "if TYPE_CHECKING:",
 ] 
